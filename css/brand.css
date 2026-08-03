@@ -1,0 +1,16 @@
+/* ==================================================================
+ *  Ajuste de marca — logo circular de Remanente
+ *  El tema original traía un wordmark rectangular de 108x28.
+ *  El logo de Remanente es un badge circular, así que se muestra
+ *  cuadrado en vez de estirado.
+ * ================================================================== */
+
+.header-logo img {
+  width: 52px;
+  height: 52px;
+}
+
+.footer-logo img {
+  width: 90px;
+  height: 90px;
+}
