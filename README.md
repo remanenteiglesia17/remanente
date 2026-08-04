@@ -1,8 +1,6 @@
-# ChurchSite_static  
+# Remanente-site  
 
-[![Ver Demo](https://img.shields.io/badge/-Ver%20Demo-informational?style=flat&logo=github)](https://jose-daniel-g.github.io/ChurchSite_static/)  
-[🚀 Ver demo de ChurchSite_static](https://jose-daniel-g.github.io/ChurchSite_static/)  
-**URL:** [https://jose-daniel-g.github.io/ChurchSite_static/](https://jose-daniel-g.github.io/ChurchSite_static/)  
+Puedes ver el sitio en vivo aquí: [Remanente Sitio Web](https://remanenteiglesia17.github.io/Remanente-Site/)
 
 ---
 
