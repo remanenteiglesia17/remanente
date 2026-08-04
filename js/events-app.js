@@ -23,11 +23,11 @@
   }
 
   function coverUrl(fileId) {
-    return `https://drive.google.com/thumbnail?id=${fileId}&sz=w1000`;
+    return `https://www.googleapis.com/drive/v3/files/${fileId}?alt=media&key=${CONFIG.GOOGLE_API_KEY}`;
   }
 
   function fullImgUrl(fileId) {
-    return `https://drive.google.com/thumbnail?id=${fileId}&sz=w2000`;
+    return `https://www.googleapis.com/drive/v3/files/${fileId}?alt=media&key=${CONFIG.GOOGLE_API_KEY}`;
   }
 
   async function driveList(query, fields) {
@@ -210,13 +210,12 @@
     if (nextRoot) {
       nextRoot.innerHTML = next
         ? nextEventHTML(next).replace(
-            "</ul>",
-            `</ul>${
-              next.imageCount
-                ? `<button type="button" class="btn btn--stroke" data-next-event-gallery="${next.folderId}">${t('events.cta.photos', 'Ver fotos')}</button>`
-                : ""
-            }`
-          )
+          "</ul>",
+          `</ul>${next.imageCount
+            ? `<button type="button" class="btn btn--stroke" data-next-event-gallery="${next.folderId}">${t('events.cta.photos', 'Ver fotos')}</button>`
+            : ""
+          }`
+        )
         : "";
     }
 
@@ -258,12 +257,18 @@
         grid.innerHTML = `<p class="gallery-modal__loading">${t('events.gallery.empty', 'Aún no hay fotos en este álbum.')}</p>`;
         return;
       }
+
       grid.innerHTML = images
         .map(
           (img) => `
-        <a href="${fullImgUrl(img.id)}" target="_blank" rel="noopener" class="gallery-modal__item">
-          <img src="${coverUrl(img.id)}" alt="${img.name}" loading="lazy">
-        </a>`
+      <a href="${fullImgUrl(img.id)}" target="_blank" rel="noopener" class="gallery-modal__item">
+        <img 
+          src="${coverUrl(img.id)}" 
+          alt="${img.name}" 
+          loading="lazy"
+          onerror="this.onerror=null; setTimeout(() => { this.src='${coverUrl(img.id)}'; }, 1500);"
+        >
+      </a>`
         )
         .join("");
     } catch (e) {
