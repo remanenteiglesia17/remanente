@@ -24,13 +24,14 @@
 
   // ✅ Muestra la imagen directamente en el grid usando la API
   function coverUrl(fileId) {
-    return `https://www.googleapis.com/drive/v3/files/${fileId}?alt=media&key=${CONFIG.GOOGLE_API_KEY}`;
+    return `https://lh3.googleusercontent.com/d/${fileId}`;
   }
 
   // ✅ Abre la imagen en una nueva pestaña dentro del visor de Google Drive (Sin descargar)
   function fullImgUrl(fileId) {
     // return `https://www.googleapis.com/drive/v3/files/${fileId}?alt=media&key=${CONFIG.GOOGLE_API_KEY}`;
-    return `https://drive.google.com/file/d/${fileId}/view?usp=sharing`;
+    // return `https://drive.google.com/file/d/${fileId}/view?usp=sharing`;
+    return `https://lh3.googleusercontent.com/d/${fileId}`;
   }
   async function driveList(query, fields) {
     const url = `${DRIVE_API}?q=${encodeURIComponent(query)}&fields=${encodeURIComponent(
