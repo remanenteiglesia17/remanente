@@ -35,6 +35,13 @@
 
 <body id="top">
 
+    <!-- selector de idioma -->
+    <div class="lang-toggle">
+        <button type="button" class="lang-toggle__btn" data-lang="es">ES</button>
+        <button type="button" class="lang-toggle__btn" data-lang="en">EN</button>
+    </div>
+
+
     <!-- preloader
     ================================================== -->
     <div id="preloader">
@@ -58,15 +65,15 @@
 
         <nav class="header-nav-wrap">
             <ul class="header-nav">
-                <li class="current"><a href="index.html" title="Inicio">Inicio</a></li>
+                <li class="current"><a href="index.html" title="Inicio"><span data-i18n="nav.inicio">Inicio</span></a></li>
                 <li><a href="about.html" title="Quiénes Somos">Quiénes Somos</a></li>
-                <li><a href="events.html" title="Eventos">Eventos</a></li>
-                <li><a href="contact.html" title="Contáctanos">Contáctanos</a></li>
+                <li><a href="events.html" title="Eventos"><span data-i18n="nav.events">Eventos</span></a></li>
+                <li><a href="contact.html" title="Contáctanos"><span data-i18n="nav.contact">Contáctanos</span></a></li>
             </ul>
         </nav>
 
 
-        <a class="header-menu-toggle" href="#0"><span>Menu</span></a>
+        <a class="header-menu-toggle" href="#0"><span><span data-i18n="nav.menu">Menú</span></span></a>
 
     </header> <!-- end s-header -->
 
@@ -81,30 +88,29 @@
         <div class="row hero-content">
 
             <div class="column large-full hero-content__text">
-                <h1>
-                    Existimos para <br>
-                    Honrar a Dios y <br>
-                    Hacer discípulos
-                </h1>
+                <h1 data-i18n="home.hero.h1">Existimos para <br>Honrar a Dios y <br>Hacer discípulos</h1>
 
                 <div class="hero-content__buttons">
-                    <a href="events.html" class="btn btn--stroke">Proximos eventos</a>
-                    <a href="about.html" class="btn btn--stroke">Acerca de nosotros</a>
+                    <a href="events.html" class="btn btn--stroke"><span data-i18n="home.hero.btn.events">Proximos eventos</span></a>
+                    <a href="about.html" class="btn btn--stroke"><span data-i18n="home.hero.btn.about">Acerca de nosotros</span></a>
                 </div>
             </div> <!-- end hero-content__text -->
 
         </div> <!-- end hero-content -->
 
         <ul class="hero-social">
-            <li class="hero-social__title">Follow Us</li>
+            <li class="hero-social__title">Síguenos</li>
             <li>
-                <a href="#0" title="">Facebook</a>
+                <a href="https://www.facebook.com/iglesiaremanenteoficial" target="_blank" rel="noopener" title="Facebook">Facebook</a>
             </li>
             <li>
-                <a href="#0" title="">YouTube</a>
+                <a href="https://www.youtube.com/@RemanentedelDiosvivoyeternoigl" target="_blank" rel="noopener" title="YouTube">YouTube</a>
             </li>
             <li>
-                <a href="#0" title="">Instagram</a>
+                <a href="https://www.tiktok.com/@remanente.del.dio" target="_blank" rel="noopener" title="TikTok">TikTok</a>
+            </li>
+            <li>
+                <a href="https://www.instagram.com/remanente.iglesia17/" target="_blank" rel="noopener" title="Instagram">Instagram</a>
             </li>
         </ul> <!-- end hero-social -->
 
@@ -124,8 +130,8 @@
         <div class="row row-y-center about-content">
 
             <div class="column large-half medium-full">
-                <h3 class="subhead">Bienvenidos a Remanente</h3>
-                <p class="lead">
+                <h3 class="subhead" data-i18n="home.about.subhead">Bienvenidos a Remanente</h3>
+                <p class="lead" data-i18n="home.about.lead">
                     La fe en Jesucristo y la comunión fraterna nos unen como una familia. No importa de dónde vengas ni
                     en qué etapa
                     de tu vida te encuentres: aquí tienes un lugar.
@@ -134,30 +140,30 @@
                     mensaje,
                     recurso y encuentro aquí te acerquen más al corazón del Padre y te inspiren a caminar en Su verdad.
                 </p>
-                <a href="about.html" class="btn btn--primary btn--about">Más Sobre Remanente</a>
+                <a href="about.html" class="btn btn--primary btn--about"><span data-i18n="home.about.btn">Más Sobre Remanente</span></a>
             </div>
 
             <div class="column large-half medium-full">
                 <ul class="about-sched">
                     <li>
-                        <h4>Servicio Principal de la Iglesia</h4>
+                        <h4 data-i18n="home.sched.title1">Servicio Principal de la Iglesia</h4>
                         <p>
                             Domingo - 9:00 AM | 1:00 PM | 4:30 PM <br>
-                            1600 Amphitheatre Parkway, Mt. View, CA, 94043
+                            Cra. 7e Bis #72a-74, Palmira, Valle del Cauca
                         </p>
                     </li>
                     <li>
-                        <h4>Iglesia Infantil</h4>
+                        <h4 data-i18n="home.sched.title2">Iglesia Infantil</h4>
                         <p>
                             Domingo - 9:00 AM | 1:00 PM | 4:30 PM <br>
-                            1600 Amphitheatre Parkway, Mt. View, CA, 94043
+                            Cra. 7e Bis #72a-74, Palmira, Valle del Cauca
                         </p>
                     </li>
                     <li>
-                        <h4>Reunión de Oración</h4>
+                        <h4 data-i18n="home.sched.title3">Reunión de Oración</h4>
                         <p>
                             Sábado - 7:00 PM <br>
-                            1600 Amphitheatre Parkway, Mt. View, CA, 94043
+                            Cra. 7e Bis #72a-74, Palmira, Valle del Cauca
                         </p>
                     </li>
                 </ul> <!-- end about-sched-->
@@ -175,8 +181,8 @@
 
         <div class="row connect-content">
             <div class="column large-half tab-full">
-                <h3 class="display-1">Sé Voluntario con Nosotros.</h3>
-                <p>
+                <h3 class="display-1" data-i18n="home.connect.vol.h">Sé Voluntario con Nosotros.</h3>
+                <p data-i18n="home.connect.vol.p">
                     Selecciona marcar la diferencia sirviendo a otros.
                     Descubre el gozo de ayudar, crecer y formar parte de algo más grande.
                     Ya sea dando la bienvenida, apoyando en eventos o sirviendo en comunidad,
@@ -184,11 +190,11 @@
                     Juntos podemos reflejar el amor de Cristo en acción.
                 </p>
 
-                <a href="volunteer.html" class="btn btn--primary h-full-width">Estoy Interesado</a>
+                <a href="volunteer.html" class="btn btn--primary h-full-width"><span data-i18n="home.connect.vol.btn">Estoy Interesado</span></a>
             </div>
             <div class="column large-half tab-full">
-                <h3 class="display-1">Únete a un Grupo de Conexión.</h3>
-                <p>
+                <h3 class="display-1" data-i18n="home.connect.grp.h">Únete a un Grupo de Conexión.</h3>
+                <p data-i18n="home.connect.grp.p">
                     Los Grupos de Conexión son espacios donde compartimos la vida,
                     crecemos en la fe y nos apoyamos mutuamente.
                     No camines solo tu jornada espiritual — únete a una comunidad que te escucha,
@@ -196,7 +202,7 @@
                     ¡Encuentra tu lugar hoy!
                 </p>
 
-                <a href="connect-group.html" class="btn btn--primary h-full-width">Más Información</a>
+                <a href="connect-group.html" class="btn btn--primary h-full-width"><span data-i18n="home.connect.grp.btn">Más Información</span></a>
             </div>
         </div> <!-- end connect-content  -->
 
@@ -209,32 +215,17 @@
 
         <div class="row events-header">
             <div class="column">
-                <h2 class="subhead">Próximos Eventos</h2>
+                <h2 class="subhead" data-i18n="home.events.subhead">Próximos Eventos</h2>
             </div>
         </div> <!-- end event-header -->
 
         <div class="row events-home-teaser">
             <div class="column large-full">
-                <p>
+                <p data-i18n="home.events.teaser">
                     Conoce el próximo evento de la iglesia y revive en fotos los que ya
                     compartimos juntos.
                 </p>
-                <a href="events.html" class="btn btn--primary h-full-width">Ver Eventos</a>
-            </div>
-
-            <div class="column events-list__item">
-                <h3 class="display-1 events-list__item-title">
-                    <a href="#0" title="">Conferencia de Liderazgo</a>
-                </h3>
-                <p>
-                    Prepárate para ser equipado y motivado para liderar con excelencia.
-                    Dirigido a voluntarios, líderes de grupos y todos los que deseen crecer en su llamado.
-                </p>
-                <ul class="events-list__meta">
-                    <li class="events-list__meta-date">Domingo, 28 de julio de 2019</li>
-                    <li class="events-list__meta-time">2:00 PM - 5:30 PM</li>
-                    <li class="events-list__meta-location">1600 Amphitheatre Parkway, Mt. View</li>
-                </ul>
+                <a href="events.html" class="btn btn--primary h-full-width"><span data-i18n="home.events.btn">Ver Eventos</span></a>
             </div>
 
         </div> <!-- end events-list -->
@@ -295,25 +286,31 @@
             <div class="column">
                 <ul class="social-list">
                     <li class="social-list__item">
-                        <a href="#0" title="">
+                        <a href="https://www.youtube.com/@RemanentedelDiosvivoyeternoigl" target="_blank" rel="noopener" title="YouTube">
+                            <span class="social-list__icon social-list__icon--youtube"></span>
+                            <span class="social-list__text">YouTube</span>
+                        </a>
+                    </li>
+                    <li class="social-list__item">
+                        <a href="https://www.tiktok.com/@remanente.del.dio" target="_blank" rel="noopener" title="TikTok">
+                            <span class="social-list__icon social-list__icon--tiktok"></span>
+                            <span class="social-list__text">TikTok</span>
+                        </a>
+                    </li>
+                    <li class="social-list__item">
+                        <a href="https://www.facebook.com/iglesiaremanenteoficial" target="_blank" rel="noopener" title="Facebook">
                             <span class="social-list__icon social-list__icon--facebook"></span>
                             <span class="social-list__text">Facebook</span>
                         </a>
                     </li>
                     <li class="social-list__item">
-                        <a href="#0" title="">
-                            <span class="social-list__icon social-list__icon--twitter"></span>
-                            <span class="social-list__text">Twitter</span>
-                        </a>
-                    </li>
-                    <li class="social-list__item">
-                        <a href="#0" title="">
+                        <a href="https://www.instagram.com/remanente.iglesia17/" target="_blank" rel="noopener" title="Instagram">
                             <span class="social-list__icon social-list__icon--instagram"></span>
                             <span class="social-list__text">Instagram</span>
                         </a>
                     </li>
                     <li class="social-list__item">
-                        <a href="#0" title="">
+                        <a href="mailto:remanente.iglesia17@gmail.com" title="Correo">
                             <span class="social-list__icon social-list__icon--email"></span>
                             <span class="social-list__text">Correo</span>
                         </a>
@@ -345,26 +342,26 @@
             <div class="column large-half tab-full">
                 <div class="row">
                     <div class="column large-7 medium-full">
-                        <h4 class="h6">Nuestra Ubicación</h4>
+                        <h4 class="h6"><span data-i18n="footer.location">Nuestra Ubicación</span></h4>
                         <p>
-                            1600 Amphitheatre Parkway <br>
-                            Mountain View, California <br>
-                            94043 EE. UU.
+                            Cra. 7e Bis #72a-74 <br>
+                            Barrio Alfonso López, Palmira <br>
+                            Valle del Cauca, Colombia
                         </p>
 
                         <p>
-                            <a href="https://goo.gl/maps/bc7C7eYtSmnNs6216" target="_blank" class="btn btn--footer">
-                                Cómo Llegar
+                            <a href="https://www.google.com/maps/search/?api=1&query=Cra.+7e+Bis+%2372a-74%2C+Alfonso+Lopez%2C+Palmira%2C+Cali%2C+Valle+del+Cauca%2C+Colombia" target="_blank" class="btn btn--footer">
+                                <span data-i18n="footer.directions">Cómo Llegar</span>
                             </a>
                         </p>
                     </div>
                     <div class="column large-5 medium-full">
-                        <h4 class="h6">Enlaces Rápidos</h4>
+                        <h4 class="h6"><span data-i18n="footer.quicklinks">Enlaces Rápidos</span></h4>
                         <ul class="footer-list">
                             <li><a href="index.html">Inicio</a></li>
                             <li><a href="about.html">Quiénes Somos</a></li>
-                            <li><a href="volunteer.html">Voluntariado</a></li>
-                            <li><a href="connect-group.html">Grupos Conexión</a></li>
+                            <li><a href="volunteer.html"><span data-i18n="nav.volunteer">Voluntariado</span></a></li>
+                            <li><a href="connect-group.html"><span data-i18n="nav.connect">Grupos Conexión</span></a></li>
                             <li><a href="events.html">Eventos</a></li>
                             <li><a href="contact.html">Contacto</a></li>
                         </ul>
@@ -375,7 +372,7 @@
 
         <div class="row footer-bottom">
             <div class="column ss-copyright">
-                <span>© Copyright Remanente 2026</span>
+                <span><span data-i18n="footer.copyright">© Copyright Remanente 2026</span></span>
                 <span>Diseño por <a href="https://www.styleshout.com/">StyleShout</a></span>
             </div>
         </div> <!-- footer-bottom -->
@@ -396,6 +393,7 @@
     ================================================== -->
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/plugins.js"></script>
+    <script src="js/i18n.js"></script>
     <script src="js/main.js"></script>
 
 </body>

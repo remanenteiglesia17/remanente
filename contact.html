@@ -36,6 +36,13 @@
 
 <body id="top">
 
+    <!-- selector de idioma -->
+    <div class="lang-toggle">
+        <button type="button" class="lang-toggle__btn" data-lang="es">ES</button>
+        <button type="button" class="lang-toggle__btn" data-lang="en">EN</button>
+    </div>
+
+
     <!-- preloader
     ================================================== -->
     <div id="preloader">
@@ -59,15 +66,15 @@
 
         <nav class="header-nav-wrap">
             <ul class="header-nav">
-                <li><a href="index.html" title="Inicio">Inicio</a></li>
+                <li><a href="index.html" title="Inicio"><span data-i18n="nav.inicio">Inicio</span></a></li>
                 <li><a href="about.html" title="Quiénes Somos">Quiénes Somos</a></li>
-                <li><a href="events.html" title="Eventos">Eventos</a></li>
-                <li><a href="contact.html" title="Contáctanos">Contáctanos</a></li>
+                <li><a href="events.html" title="Eventos"><span data-i18n="nav.events">Eventos</span></a></li>
+                <li><a href="contact.html" title="Contáctanos"><span data-i18n="nav.contact">Contáctanos</span></a></li>
             </ul>
         </nav>
 
 
-        <a class="header-menu-toggle" href="#0"><span>Menu</span></a>
+        <a class="header-menu-toggle" href="#0"><span><span data-i18n="nav.menu">Menú</span></span></a>
 
     </header> <!-- end s-header -->
 
@@ -99,18 +106,16 @@
                 <div class="column large-6 tab-full">
                     <h3>Oficina Principal.</h3>
                     <p>
-                        1600 Amphitheatre Parkway<br>
-                        Mountain View, CA 94043 EE.UU.<br>
-                        Lun-Jue 8:30am – 4:30pm
+                        Cra. 7e Bis #72a-74<br>
+                        Barrio Alfonso López, Palmira, Valle del Cauca<br>
+                        Colombia
                     </p>
                 </div>
 
                 <div class="column large-6 tab-full">
                     <h3>Información de Contacto.</h3>
                     <p>
-                        sayhello@hesed.com<br>
-                        info@hesed.com <br>
-                        Teléfono: +197 543 2345
+                        remanente.iglesia17@gmail.com
                     </p>
                 </div>
             </div>
@@ -153,31 +158,37 @@
     <div class="row social-content">
         <div class="column">
             <ul class="social-list">
-                <li class="social-list__item">
-                    <a href="#0" title="">
-                        <span class="social-list__icon social-list__icon--facebook"></span>
-                        <span class="social-list__text">Facebook</span>
-                    </a>
-                </li>
-                <li class="social-list__item">
-                    <a href="#0" title="">
-                        <span class="social-list__icon social-list__icon--twitter"></span>
-                        <span class="social-list__text">Twitter</span>
-                    </a>
-                </li>
-                <li class="social-list__item">
-                    <a href="#0" title="">
-                        <span class="social-list__icon social-list__icon--instagram"></span>
-                        <span class="social-list__text">Instagram</span>
-                    </a>
-                </li>
-                <li class="social-list__item">
-                    <a href="#0" title="">
-                        <span class="social-list__icon social-list__icon--email"></span>
-                        <span class="social-list__text">Correo</span>
-                    </a>
-                </li>
-            </ul>
+                    <li class="social-list__item">
+                        <a href="https://www.youtube.com/@RemanentedelDiosvivoyeternoigl" target="_blank" rel="noopener" title="YouTube">
+                            <span class="social-list__icon social-list__icon--youtube"></span>
+                            <span class="social-list__text">YouTube</span>
+                        </a>
+                    </li>
+                    <li class="social-list__item">
+                        <a href="https://www.tiktok.com/@remanente.del.dio" target="_blank" rel="noopener" title="TikTok">
+                            <span class="social-list__icon social-list__icon--tiktok"></span>
+                            <span class="social-list__text">TikTok</span>
+                        </a>
+                    </li>
+                    <li class="social-list__item">
+                        <a href="https://www.facebook.com/iglesiaremanenteoficial" target="_blank" rel="noopener" title="Facebook">
+                            <span class="social-list__icon social-list__icon--facebook"></span>
+                            <span class="social-list__text">Facebook</span>
+                        </a>
+                    </li>
+                    <li class="social-list__item">
+                        <a href="https://www.instagram.com/remanente.iglesia17/" target="_blank" rel="noopener" title="Instagram">
+                            <span class="social-list__icon social-list__icon--instagram"></span>
+                            <span class="social-list__text">Instagram</span>
+                        </a>
+                    </li>
+                    <li class="social-list__item">
+                        <a href="mailto:remanente.iglesia17@gmail.com" title="Correo">
+                            <span class="social-list__icon social-list__icon--email"></span>
+                            <span class="social-list__text">Correo</span>
+                        </a>
+                    </li>
+                </ul>
         </div>
     </div> <!-- fin contenido redes -->
 </section> <!-- fin s-social -->
@@ -199,24 +210,24 @@
         <div class="column large-half tab-full">
             <div class="row">
                 <div class="column large-7 medium-full">
-                    <h4 class="h6">Nuestra Ubicación</h4>
+                    <h4 class="h6"><span data-i18n="footer.location">Nuestra Ubicación</span></h4>
                     <p>
-                        1600 Amphitheatre Parkway <br>
-                        Mountain View, California <br>
-                        94043 EE.UU.
+                        Cra. 7e Bis #72a-74 <br>
+                            Barrio Alfonso López, Palmira <br>
+                            Valle del Cauca, Colombia
                     </p>
 
                     <p>
-                        <a href="https://goo.gl/maps/bc7C7eYtSmnNs6216" target="_blank" class="btn btn--footer">Cómo llegar</a>
+                        <a href="https://www.google.com/maps/search/?api=1&query=Cra.+7e+Bis+%2372a-74%2C+Alfonso+Lopez%2C+Palmira%2C+Cali%2C+Valle+del+Cauca%2C+Colombia" target="_blank" class="btn btn--footer"><span data-i18n="footer.directions">Cómo llegar</span></a>
                     </p>
                 </div>
                 <div class="column large-5 medium-full">
-                    <h4 class="h6">Enlaces Rápidos</h4>
+                    <h4 class="h6"><span data-i18n="footer.quicklinks">Enlaces Rápidos</span></h4>
                     <ul class="footer-list">
                         <li><a href="index.html">Inicio</a></li>
                         <li><a href="about.html">Acerca de</a></li>
-                        <li><a href="volunteer.html">Voluntariado</a></li>
-                        <li><a href="connect-group.html">Grupos Conexión</a></li>
+                        <li><a href="volunteer.html"><span data-i18n="nav.volunteer">Voluntariado</span></a></li>
+                        <li><a href="connect-group.html"><span data-i18n="nav.connect">Grupos Conexión</span></a></li>
                         <li><a href="events.html">Próximos Eventos</a></li>
                         <li><a href="contact.html">Contacto</a></li>
                     </ul>
@@ -227,7 +238,7 @@
 
     <div class="row footer-bottom">
         <div class="column ss-copyright">
-            <span>© Copyright Remanente 2026</span>
+            <span><span data-i18n="footer.copyright">© Copyright Remanente 2026</span></span>
             <span>Diseño por <a href="https://www.styleshout.com/">StyleShout</a></span>
         </div>
     </div>
@@ -249,6 +260,7 @@
     ================================================== -->
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/plugins.js"></script>
+    <script src="js/i18n.js"></script>
     <script src="js/main.js"></script>
 
 </body>

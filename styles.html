@@ -42,6 +42,13 @@
 
 <body id="top">
 
+    <!-- selector de idioma -->
+    <div class="lang-toggle">
+        <button type="button" class="lang-toggle__btn" data-lang="es">ES</button>
+        <button type="button" class="lang-toggle__btn" data-lang="en">EN</button>
+    </div>
+
+
     <!-- preloader
     ================================================== -->
     <div id="preloader">
@@ -72,7 +79,7 @@
             </ul>
         </nav>
 
-        <a class="header-menu-toggle" href="#0"><span>Menu</span></a>
+        <a class="header-menu-toggle" href="#0"><span><span data-i18n="nav.menu">Menú</span></span></a>
 
     </header> <!-- end s-header -->
 
@@ -518,27 +525,33 @@
             <div class="column">
                 <ul class="social-list">
                     <li class="social-list__item">
-                        <a href="#0" title="">
+                        <a href="https://www.youtube.com/@RemanentedelDiosvivoyeternoigl" target="_blank" rel="noopener" title="YouTube">
+                            <span class="social-list__icon social-list__icon--youtube"></span>
+                            <span class="social-list__text">YouTube</span>
+                        </a>
+                    </li>
+                    <li class="social-list__item">
+                        <a href="https://www.tiktok.com/@remanente.del.dio" target="_blank" rel="noopener" title="TikTok">
+                            <span class="social-list__icon social-list__icon--tiktok"></span>
+                            <span class="social-list__text">TikTok</span>
+                        </a>
+                    </li>
+                    <li class="social-list__item">
+                        <a href="https://www.facebook.com/iglesiaremanenteoficial" target="_blank" rel="noopener" title="Facebook">
                             <span class="social-list__icon social-list__icon--facebook"></span>
                             <span class="social-list__text">Facebook</span>
                         </a>
                     </li>
                     <li class="social-list__item">
-                        <a href="#0" title="">
-                            <span class="social-list__icon social-list__icon--twitter"></span>
-                            <span class="social-list__text">Twitter</span>
-                        </a>
-                    </li>
-                    <li class="social-list__item">
-                        <a href="#0" title="">
+                        <a href="https://www.instagram.com/remanente.iglesia17/" target="_blank" rel="noopener" title="Instagram">
                             <span class="social-list__icon social-list__icon--instagram"></span>
                             <span class="social-list__text">Instagram</span>
                         </a>
                     </li>
                     <li class="social-list__item">
-                        <a href="#0" title="">
+                        <a href="mailto:remanente.iglesia17@gmail.com" title="Correo">
                             <span class="social-list__icon social-list__icon--email"></span>
-                            <span class="social-list__text">Email</span>
+                            <span class="social-list__text">Correo</span>
                         </a>
                     </li>
                 </ul>
@@ -560,7 +573,7 @@
                     </a>
                 </div>  <!-- footer-logo -->
                 <p>
-Nuestro propósito es compartir el amor de Cristo y ayudar a otros a crecer en su fe. Este es un lugar para encontrar esperanza, restauración y comunidad.
+<span data-i18n="footer.tagline">Nuestro propósito es compartir el amor de Cristo y ayudar a otros a crecer en su fe. Este es un lugar para encontrar esperanza, restauración y comunidad.</span>
                 </p>
             </div>
             <div class="column large-half tab-full">
@@ -568,13 +581,13 @@ Nuestro propósito es compartir el amor de Cristo y ayudar a otros a crecer en s
                     <div class="column large-7 medium-full">
                         <h4 class="h6">Our Location</h4>
                         <p>
-                        1600 Amphitheatre Parkway <br>
-                        Mountain View, California <br>
-                        94043 US
+                        Cra. 7e Bis #72a-74 <br>
+                            Barrio Alfonso López, Palmira <br>
+                            Valle del Cauca, Colombia
                         </p>
         
                         <p>
-                        <a href="https://goo.gl/maps/bc7C7eYtSmnNs6216" target="_blank" class="btn btn--footer">Get Direction</a>
+                        <a href="https://www.google.com/maps/search/?api=1&query=Cra.+7e+Bis+%2372a-74%2C+Alfonso+Lopez%2C+Palmira%2C+Cali%2C+Valle+del+Cauca%2C+Colombia" target="_blank" class="btn btn--footer">Get Direction</a>
                         </p>
                     </div>
                     <div class="column large-5 medium-full">
@@ -594,7 +607,7 @@ Nuestro propósito es compartir el amor de Cristo y ayudar a otros a crecer en s
 
         <div class="row footer-bottom">
             <div class="column ss-copyright">
-                <span>© Copyright Remanente 2026</span> 
+                <span><span data-i18n="footer.copyright">© Copyright Remanente 2026</span></span> 
                 <span>Design by <a href="https://www.styleshout.com/">StyleShout</a></span>
             </div>
         </div> <!-- footer-bottom -->
@@ -612,6 +625,7 @@ Nuestro propósito es compartir el amor de Cristo y ayudar a otros a crecer en s
     ================================================== -->
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/plugins.js"></script>
+    <script src="js/i18n.js"></script>
     <script src="js/main.js"></script>
 
 </body>

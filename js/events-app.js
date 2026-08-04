@@ -59,7 +59,11 @@
     if (!CONFIG.JSONBIN_BIN_ID || CONFIG.JSONBIN_BIN_ID.startsWith("PEGA_AQUI")) {
       return [];
     }
-    const res = await fetch(`${JSONBIN_API}/${CONFIG.JSONBIN_BIN_ID}/latest`);
+    const headers = {};
+    if (CONFIG.JSONBIN_ACCESS_KEY && !CONFIG.JSONBIN_ACCESS_KEY.startsWith("PEGA_AQUI")) {
+      headers["X-Access-Key"] = CONFIG.JSONBIN_ACCESS_KEY;
+    }
+    const res = await fetch(`${JSONBIN_API}/${CONFIG.JSONBIN_BIN_ID}/latest`, { headers });
     if (!res.ok) {
       throw new Error(`jsonbin error (${res.status})`);
     }
@@ -142,6 +146,10 @@
 
   /* ---------------- render ---------------- */
 
+  function t(key, fallback) {
+    return (window.REMANENTE_I18N && window.REMANENTE_I18N.t) ? window.REMANENTE_I18N.t(key) : fallback;
+  }
+
   function cardHTML(ev) {
     const img = ev.coverId
       ? `<img src="${coverUrl(ev.coverId)}" alt="${ev.title}" loading="lazy">`
@@ -149,13 +157,13 @@
 
     return `
       <div class="column event-card" data-folder-id="${ev.folderId}">
-        <button type="button" class="event-card__link" aria-label="Ver fotos de ${ev.title}">
+        <button type="button" class="event-card__link" aria-label="${t('events.cta.photos', 'Ver fotos')} ${ev.title}">
           <div class="event-card__media">${img}</div>
           <div class="event-card__body">
             <h3 class="event-card__title">${ev.title}</h3>
             ${ev.dateLabel ? `<p class="event-card__date">${ev.dateLabel}</p>` : ""}
             ${ev.description ? `<p class="event-card__desc">${ev.description}</p>` : ""}
-            <span class="event-card__cta">Ver fotos ${ev.imageCount ? `(${ev.imageCount})` : ""}</span>
+            <span class="event-card__cta">${t('events.cta.photos', 'Ver fotos')} ${ev.imageCount ? `(${ev.imageCount})` : ""}</span>
           </div>
         </button>
       </div>`;
@@ -169,7 +177,7 @@
         <div class="next-event__media" style="background-image:url('${img}')"></div>
         <div class="row next-event__content">
           <div class="column">
-            <h3 class="subhead">Próximo Evento</h3>
+            <h3 class="subhead">${t('events.section.nextlabel', 'Próximo Evento')}</h3>
             <h2 class="display-1">${ev.title}</h2>
             ${ev.description ? `<p>${ev.description}</p>` : ""}
             <ul class="events-list__meta">
@@ -177,7 +185,7 @@
               ${ev.time ? `<li class="events-list__meta-time">${ev.time}</li>` : ""}
               ${ev.location ? `<li class="events-list__meta-location">${ev.location}</li>` : ""}
             </ul>
-            ${ev.cost ? `<p><strong>Costo:</strong> ${ev.cost}</p>` : ""}
+            ${ev.cost ? `<p><strong>${t('events.cta.cost', 'Costo:')}</strong> ${ev.cost}</p>` : ""}
           </div>
         </div>
       </section>`;
@@ -189,20 +197,65 @@
     el.innerHTML = `<div class="row"><div class="column"><p class="event-error">${msg}</p></div></div>`;
   }
 
+  let lastEventsByFolder = null;
+  let lastNext = null;
+  let lastRest = null;
+
+  function renderResults(next, rest, eventsByFolder) {
+    lastNext = next;
+    lastRest = rest;
+    lastEventsByFolder = eventsByFolder;
+
+    const nextRoot = document.getElementById("next-event-root");
+    if (nextRoot) {
+      nextRoot.innerHTML = next
+        ? nextEventHTML(next).replace(
+            "</ul>",
+            `</ul>${
+              next.imageCount
+                ? `<button type="button" class="btn btn--stroke" data-next-event-gallery="${next.folderId}">${t('events.cta.photos', 'Ver fotos')}</button>`
+                : ""
+            }`
+          )
+        : "";
+    }
+
+    const root = document.getElementById("events-dynamic-root");
+    if (!rest.length) {
+      root.innerHTML = `<div class="row"><div class="column"><p>${t('events.empty', 'Aún no hay eventos pasados para mostrar.')}</p></div></div>`;
+    } else {
+      root.innerHTML = `
+        <div class="row events-header">
+          <div class="column"><h2 class="subhead">${t('events.section.past', 'Eventos que Ya Vivimos')}</h2></div>
+        </div>
+        <div class="row block-large-1-3 block-tab-1-2 block-mob-full events-cards">
+          ${rest.map(cardHTML).join("")}
+        </div>`;
+    }
+
+    setupModal(eventsByFolder);
+  }
+
+  document.addEventListener("remanente:langchange", () => {
+    if (lastEventsByFolder) {
+      renderResults(lastNext, lastRest, lastEventsByFolder);
+    }
+  });
+
   async function openGallery(ev) {
     const modal = document.getElementById("event-gallery-modal");
     const grid = modal.querySelector(".gallery-modal__grid");
     const title = modal.querySelector(".gallery-modal__title");
 
     title.textContent = ev.title;
-    grid.innerHTML = `<p class="gallery-modal__loading">Cargando fotos...</p>`;
+    grid.innerHTML = `<p class="gallery-modal__loading">${t('events.gallery.loading', 'Cargando fotos...')}</p>`;
     modal.classList.add("is-open");
     document.body.classList.add("modal-open");
 
     try {
       const images = await fetchFolderImages(ev.folderId);
       if (!images.length) {
-        grid.innerHTML = `<p class="gallery-modal__loading">Aún no hay fotos en este álbum.</p>`;
+        grid.innerHTML = `<p class="gallery-modal__loading">${t('events.gallery.empty', 'Aún no hay fotos en este álbum.')}</p>`;
         return;
       }
       grid.innerHTML = images
@@ -214,9 +267,10 @@
         )
         .join("");
     } catch (e) {
-      grid.innerHTML = `<p class="gallery-modal__loading">No se pudieron cargar las fotos. Intenta de nuevo más tarde.</p>`;
+      grid.innerHTML = `<p class="gallery-modal__loading">${t('events.gallery.error', 'No se pudieron cargar las fotos. Intenta de nuevo más tarde.')}</p>`;
     }
   }
+
 
   function closeGallery() {
     const modal = document.getElementById("event-gallery-modal");
@@ -257,12 +311,12 @@
 
     if (!isConfigured()) {
       renderError(
-        "La sección de eventos aún no está configurada. Completa js/config.js siguiendo GUIA_CONFIGURACION.md."
+        `${t('events.error.config', 'La sección de eventos aún no está configurada.')} Completa js/config.js siguiendo GUIA_CONFIGURACION.md.`
       );
       return;
     }
 
-    root.innerHTML = `<div class="row"><div class="column"><p class="event-loading">Cargando eventos...</p></div></div>`;
+    root.innerHTML = `<div class="row"><div class="column"><p class="event-loading">${t('events.loading', 'Cargando eventos...')}</p></div></div>`;
 
     try {
       const events = await buildEvents();
@@ -271,37 +325,11 @@
       const eventsByFolder = {};
       events.forEach((e) => (eventsByFolder[e.folderId] = e));
 
-      const nextRoot = document.getElementById("next-event-root");
-      if (nextRoot) {
-        nextRoot.innerHTML = next
-          ? nextEventHTML(next).replace(
-              "</ul>",
-              `</ul>${
-                next.imageCount
-                  ? `<button type="button" class="btn btn--stroke" data-next-event-gallery="${next.folderId}">Ver fotos</button>`
-                  : ""
-              }`
-            )
-          : "";
-      }
-
-      if (!rest.length) {
-        root.innerHTML = `<div class="row"><div class="column"><p>Aún no hay eventos pasados para mostrar.</p></div></div>`;
-      } else {
-        root.innerHTML = `
-          <div class="row events-header">
-            <div class="column"><h2 class="subhead">Eventos que Ya Vivimos</h2></div>
-          </div>
-          <div class="row block-large-1-3 block-tab-1-2 block-mob-full events-cards">
-            ${rest.map(cardHTML).join("")}
-          </div>`;
-      }
-
-      setupModal(eventsByFolder);
+      renderResults(next, rest, eventsByFolder);
     } catch (err) {
       console.error(err);
       renderError(
-        "No se pudieron cargar los eventos en este momento. Revisa la consola para más detalle (clave de API, carpetas compartidas, o bin de jsonbin)."
+        `${t('events.error.load', 'No se pudieron cargar los eventos en este momento.')} (clave de API, carpetas compartidas, o bin de jsonbin)`
       );
     }
   }

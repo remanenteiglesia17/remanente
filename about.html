@@ -35,6 +35,13 @@
 
 <body id="top">
 
+    <!-- selector de idioma -->
+    <div class="lang-toggle">
+        <button type="button" class="lang-toggle__btn" data-lang="es">ES</button>
+        <button type="button" class="lang-toggle__btn" data-lang="en">EN</button>
+    </div>
+
+
     <!-- preloader
     ================================================== -->
     <div id="preloader">
@@ -58,15 +65,15 @@
 
         <nav class="header-nav-wrap">
             <ul class="header-nav">
-                <li><a href="index.html" title="Inicio">Inicio</a></li>
-                <li class="current"><a href="about.html" title="Acerca de">Acerca de</a></li>
-                <li><a href="events.html" title="Eventos">Eventos</a></li>
-                <li><a href="contact.html" title="Contáctanos">Contáctanos</a></li>
+                <li><a href="index.html" title="Inicio"><span data-i18n="nav.inicio">Inicio</span></a></li>
+                <li class="current"><a href="about.html" title="Acerca de"><span data-i18n="nav.about">Acerca de</span></a></li>
+                <li><a href="events.html" title="Eventos"><span data-i18n="nav.events">Eventos</span></a></li>
+                <li><a href="contact.html" title="Contáctanos"><span data-i18n="nav.contact">Contáctanos</span></a></li>
 
             </ul>
         </nav>
 
-        <a class="header-menu-toggle" href="#0"><span>Menu</span></a>
+        <a class="header-menu-toggle" href="#0"><span><span data-i18n="nav.menu">Menú</span></span></a>
 
     </header> <!-- end s-header -->
 
@@ -92,49 +99,47 @@
         <div class="row">
             <div class="column">
 
-                <p class="lead drop-cap">
-                    Non ratione vel. Non consequatur hic et labore et quia doloribus.
-                    Dolorum rerum dignissimos inventore id corporis rerum. At nesciunt
-                    ut error est soluta qui quibusdam blanditiis animi. Ad saepe quia at
-                    numquam temporibus quisquam ipsa. Ab omnis aut ratione ipsam voluptates
-                    quia. Veniam temporibus et. Aperiam sint veniam libero perferendis a.
-                    Quisquam optio quidem et.
+                <p class="lead drop-cap" data-i18n="about.lead">
+                    Remanente del Dios Vivo y Eterno es una iglesia en Palmira, Cali, que
+                    cree en el poder transformador del evangelio. Somos una familia de fe
+                    donde cada persona encuentra un lugar para crecer, servir y conocer
+                    más de Dios. Caminamos juntos, generación tras generación, guardando
+                    la fe que un día fue dada a los santos.
                 </p>
 
                 <div class="row">
                     <div class="column large-half medium-full">
-                        <h2>Nuestro proposito.</h2>
-                        <p>
-                            Earum quia in. Sed deleniti sit aut molestiae eum consequatur
-                            quidem. Non beatae molestias eveniet repellendus doloribus odio
-                            sit nihil. Est labore a praesentium esse quisquam. Cumque ut
-                            omnis harum omnis eaque.
+                        <h2 data-i18n="about.purpose.h">Nuestro Propósito.</h2>
+                        <p data-i18n="about.purpose.p">
+                            Existimos para honrar a Dios y hacer discípulos que reflejen el
+                            carácter de Cristo en cada área de su vida. Creemos que cada
+                            persona fue creada con un propósito único, y nuestro llamado es
+                            acompañarla a descubrirlo a la luz de la Palabra.
 
-                            Et minus tempora dicta blanditiis rem sequi. Est doloremque
-                            odit doloremque molestiae qui necessitatibus consequatur alias.
-                            Quisquam rerum nihil labore nihil eos et. Dignissimos veniam odio
-                            architecto voluptate ut molestias in porro et.
+                            Por eso invertimos en la enseñanza, la oración y la comunión
+                            fraterna: para que cada miembro de esta iglesia crezca en madurez
+                            espiritual y se convierta en un remanente fiel en medio de su
+                            generación.
                         </p>
                     </div>
 
                     <div class="column large-half medium-full">
-                        <h2>Nuestra Mision.</h2>
-                        <p>
-                            Et unde et quibusdam laudantium consequatur. Necessitatibus ut
-                            ullam laudantium doloremque non qui expedita. Officia magnam
-                            eos aut quae et est. Labore id assumenda dignissimos sapiente
-                            qui voluptatem. Omnis soluta eos ex dolores.
+                        <h2 data-i18n="about.mission.h">Nuestra Misión.</h2>
+                        <p data-i18n="about.mission.p">
+                            Llevar el evangelio de Jesucristo a nuestra ciudad y a las
+                            naciones, formando discípulos que amen a Dios sobre todas las
+                            cosas y sirvan a su prójimo con humildad. Buscamos ser una
+                            iglesia que restaura, sana y levanta familias.
 
-                            Quas eaque eveniet rem voluptas rerum et nesciunt ipsum nulla.
-                            Nulla exercitationem nesciunt et tempore reprehenderit. Vero
-                            modi eum dolores in sunt quis sed. Quis quidem aut quam quod
-                            et.
+                            Trabajamos para que cada generación —niños, jóvenes y adultos—
+                            tenga un espacio donde encontrar a Dios, edificar su fe y ser
+                            enviada a impactar el mundo que la rodea.
                         </p>
                     </div>
                 </div>
 
                 <blockquote cite="http://where-i-got-my-info-from.com">
-                    <p>
+                    <p data-i18n="about.verse">
                         Porque tanto amó Dios al mundo, que dio a su Hijo unigénito, para que todo el que cree en él no
                         se pierda, sino que tenga vida eterna. Porque Dios no envió a su Hijo al mundo para condenar al
                         mundo, sino para que el mundo sea salvo por medio de él.
@@ -146,56 +151,48 @@
 
                 <br>
 
-                <h2>Nuestros valores.</h2>
+                <h2 data-i18n="about.values.h">Nuestros Valores.</h2>
                 <div class="row block-large-1-2 block-1000-full block-list">
                     <div class="column block-list__item">
-                        <h6>Identidad en Cristo</h6>
+                        <h6 data-i18n="about.values.1.h">Identidad en Cristo</h6>
 
-                        <p>
-                            Earum quia in. Sed deleniti sit aut molestiae eum consequatur
-                            quidem. Non beatae molestias eveniet repellendus doloribus odio
-                            sit nihil. Est labore a praesentium esse quisquam. Cumque ut
-                            omnis harum omnis eaque. Et minus tempora dicta blanditiis rem sequi. Est doloremque
-                            odit doloremque molestiae qui necessitatibus consequatur alias.
-                            Quisquam rerum nihil labore nihil eos et.
+                        <p data-i18n="about.values.1.p">
+                            Sabemos quiénes somos porque sabemos de quién somos. Nuestra
+                            identidad no está en lo que hacemos ni en lo que otros dicen de
+                            nosotros, sino en ser hijos amados de Dios. Desde ahí servimos,
+                            trabajamos y amamos, sin necesidad de aprobación externa.
                         </p>
                     </div>
 
                     <div class="column block-list__item">
-                        <h6>La Iglesia es Familia</h6>
+                        <h6 data-i18n="about.values.2.h">La Iglesia es Familia</h6>
 
-                        <p>
-                            Quia cum tenetur et sequi eum molestiae expedita. Eum consectetur
-                            ut unde nam voluptatibus rerum impedit error tenetur. Temporibus
-                            sed est. Et magni modi illo accusamus. Et pariatur quis maxime
-                            minus rem sed. Quam nihil temporibus nam omnis atque laborum.
-                            Sed quos aperiam. Quasi sint consectetur non cum doloremque
-                            quidem ut laudantium dolorum temporibus nam omnis.
+                        <p data-i18n="about.values.2.p">
+                            No somos solo una congregación, somos una familia. Nos
+                            acompañamos en las alegrías y en las dificultades, llevamos las
+                            cargas los unos de los otros y celebramos juntos cada paso de fe.
+                            Aquí nadie camina solo.
                         </p>
                     </div>
 
                     <div class="column block-list__item">
-                        <h6>Cultura del Reino</h6>
-                        <p>
-                            Cupiditate amet laboriosam ratione at et veritatis quo et explicabo.
-                            Illum nostrum voluptatem dignissimos laudantium. Et veniam qui.
-                            Pariatur totam maiores. Quis et consequatur eum nesciunt rerum
-                            pariatur enim unde. Et magni modi illo accusamus. Et pariatur quis maxime
-                            minus rem sed. Impedit ad alias iste. Sed deleniti sit aut molestiae.
-                            Minus quod voluptatem laborum necessitatibus vel similique molestiae.
+                        <h6 data-i18n="about.values.3.h">Cultura del Reino</h6>
+                        <p data-i18n="about.values.3.p">
+                            Vivimos con los valores del Reino de Dios por encima de los
+                            valores del mundo: la humildad sobre el orgullo, el servicio
+                            sobre el protagonismo y la generosidad sobre el egoísmo. Así
+                            construimos una comunidad que refleja el corazón del Padre.
                         </p>
                     </div>
 
                     <div class="column block-list__item">
-                        <h6>Vida Guiada por el Espíritu</h6>
+                        <h6 data-i18n="about.values.4.h">Vida Guiada por el Espíritu</h6>
 
-                        <p>
-                            Est voluptatem sequi debitis sunt et rerum. Officia ut possimus
-                            dolorum optio quis ducimus. Quo asperiores laudantium voluptatum
-                            numquam possimus. Saepe blanditiis voluptatem natus. Ipsam non
-                            totam repellendus fugiat fugit ipsum sed molestiae. Aut beatae
-                            debitis et aut voluptatem voluptates assumenda beatae. Voluptatem
-                            recusandae velit aliquid ipsa delectus est minus.
+                        <p data-i18n="about.values.4.p">
+                            Dependemos de la guía diaria del Espíritu Santo, no de fórmulas
+                            ni tradiciones vacías. Buscamos escuchar Su voz en la oración, en
+                            la Palabra y en la comunidad, y responder con obediencia a lo que
+                            Él nos muestra.
                         </p>
                     </div>
 
@@ -203,58 +200,47 @@
 
                 <br>
 
-                <h2>Lo que Creemos.</h2>
+                <h2 data-i18n="about.believe.h">Lo que Creemos.</h2>
 
                 <div class="row block-large-1-2 block-1000-full block-list">
                     <div class="column block-list__item">
-                        <h6>El Amor de Dios es Grande</h6>
-                        <p>
-                            Earum quia in. Sed deleniti sit aut molestiae eum consequatur
-                            quidem. Non beatae molestias eveniet repellendus doloribus odio
-                            sit nihil. Est labore a praesentium esse quisquam. Cumque ut
-                            omnis harum omnis eaque. Et minus tempora dicta blanditiis rem sequi. Est doloremque
-                            odit doloremque molestiae qui necessitatibus consequatur alias.
-                            Quisquam rerum nihil labore nihil eos et.
+                        <h6 data-i18n="about.believe.1.h">El Amor de Dios es Grande</h6>
+                        <p data-i18n="about.believe.1.p">
+                            Creemos que el amor de Dios no depende de nuestro desempeño.
+                            Él nos amó primero, aun en medio de nuestras faltas, y ese amor
+                            es el fundamento de todo lo que somos y hacemos como iglesia.
                         </p>
                     </div>
                     <div class="column block-list__item">
-                        <h6>Jesús es el Camino</h6>
-                        <p>
-                            Quia cum tenetur et sequi eum molestiae expedita. Eum consectetur
-                            ut unde nam voluptatibus rerum impedit error tenetur. Temporibus
-                            sed est. Et magni modi illo accusamus. Et pariatur quis maxime
-                            minus rem sed. Quam nihil temporibus nam omnis atque laborum.
-                            Sed quos aperiam. Quasi sint consectetur non cum doloremque
-                            quidem ut laudantium dolorum temporibus nam omnis.
+                        <h6 data-i18n="about.believe.2.h">Jesús es el Camino</h6>
+                        <p data-i18n="about.believe.2.p">
+                            Creemos que Jesucristo es el único camino al Padre, y que a
+                            través de Su muerte y resurrección tenemos perdón de pecados y
+                            vida eterna. Él es el centro de nuestra fe y de nuestra
+                            predicación.
                         </p>
                     </div>
                     <div class="column block-list__item">
-                        <h6>El Espíritu Santo Habita en Nosotros</h6>
-                        <p>
-                            Cupiditate amet laboriosam ratione at et veritatis quo et explicabo.
-                            Illum nostrum voluptatem dignissimos laudantium. Et veniam qui.
-                            Pariatur totam maiores. Quis et consequatur eum nesciunt rerum
-                            pariatur enim unde. Et magni modi illo accusamus. Et pariatur quis maxime
-                            minus rem sed. Impedit ad alias iste. Sed deleniti sit aut molestiae.
-                            Minus quod voluptatem laborum necessitatibus vel similique molestiae.
+                        <h6 data-i18n="about.believe.3.h">El Espíritu Santo Habita en Nosotros</h6>
+                        <p data-i18n="about.believe.3.p">
+                            Creemos que el Espíritu Santo mora en cada creyente, nos guía a
+                            toda verdad y nos capacita con dones para servir a la iglesia y
+                            extender el evangelio con poder.
                         </p>
                     </div>
                     <div class="column block-list__item">
-                        <h6>La Biblia es la Palabra Viva</h6>
-                        <p>
-                            Est voluptatem sequi debitis sunt et rerum. Officia ut possimus
-                            dolorum optio quis ducimus. Quo asperiores laudantium voluptatum
-                            numquam possimus. Saepe blanditiis voluptatem natus. Ipsam non
-                            totam repellendus fugiat fugit ipsum sed molestiae. Aut beatae
-                            debitis et aut voluptatem voluptates assumenda beatae. Voluptatem
-                            recusandae velit aliquid ipsa delectus est minus.
+                        <h6 data-i18n="about.believe.4.h">La Biblia es la Palabra Viva</h6>
+                        <p data-i18n="about.believe.4.p">
+                            Creemos que la Biblia es la Palabra inspirada por Dios, verdadera
+                            y suficiente para guiar nuestra fe y nuestra conducta. En ella
+                            fundamentamos cada enseñanza y cada decisión como iglesia.
                         </p>
                     </div>
                 </div> <!-- end block-list -->
 
                 <br>
 
-                <h2>Conoce a Nuestro Equipo.</h2>
+                <h2 data-i18n="about.team.h">Conoce a Nuestro Equipo.</h2>
 
                 <div class="row block-large-1-2 block-tab-full church-staff">
                     <div class="column church-staff__item">
@@ -396,27 +382,33 @@
             <div class="column">
                 <ul class="social-list">
                     <li class="social-list__item">
-                        <a href="#0" title="">
+                        <a href="https://www.youtube.com/@RemanentedelDiosvivoyeternoigl" target="_blank" rel="noopener" title="YouTube">
+                            <span class="social-list__icon social-list__icon--youtube"></span>
+                            <span class="social-list__text">YouTube</span>
+                        </a>
+                    </li>
+                    <li class="social-list__item">
+                        <a href="https://www.tiktok.com/@remanente.del.dio" target="_blank" rel="noopener" title="TikTok">
+                            <span class="social-list__icon social-list__icon--tiktok"></span>
+                            <span class="social-list__text">TikTok</span>
+                        </a>
+                    </li>
+                    <li class="social-list__item">
+                        <a href="https://www.facebook.com/iglesiaremanenteoficial" target="_blank" rel="noopener" title="Facebook">
                             <span class="social-list__icon social-list__icon--facebook"></span>
                             <span class="social-list__text">Facebook</span>
                         </a>
                     </li>
                     <li class="social-list__item">
-                        <a href="#0" title="">
-                            <span class="social-list__icon social-list__icon--twitter"></span>
-                            <span class="social-list__text">Twitter</span>
-                        </a>
-                    </li>
-                    <li class="social-list__item">
-                        <a href="#0" title="">
+                        <a href="https://www.instagram.com/remanente.iglesia17/" target="_blank" rel="noopener" title="Instagram">
                             <span class="social-list__icon social-list__icon--instagram"></span>
                             <span class="social-list__text">Instagram</span>
                         </a>
                     </li>
                     <li class="social-list__item">
-                        <a href="#0" title="">
+                        <a href="mailto:remanente.iglesia17@gmail.com" title="Correo">
                             <span class="social-list__icon social-list__icon--email"></span>
-                            <span class="social-list__text">Email</span>
+                            <span class="social-list__text">Correo</span>
                         </a>
                     </li>
                 </ul>
@@ -448,22 +440,22 @@
                     <div class="column large-7 medium-full">
                         <h4 class="h6">Nuestra ubicacion</h4>
                         <p>
-                            1600 Amphitheatre Parkway <br>
-                            Mountain View, California <br>
-                            94043 US
+                            Cra. 7e Bis #72a-74 <br>
+                            Barrio Alfonso López, Palmira <br>
+                            Valle del Cauca, Colombia
                         </p>
 
                         <p>
-                            <a href="https://goo.gl/maps/bc7C7eYtSmnNs6216" target="_blank" class="btn btn--footer">Get
+                            <a href="https://www.google.com/maps/search/?api=1&query=Cra.+7e+Bis+%2372a-74%2C+Alfonso+Lopez%2C+Palmira%2C+Cali%2C+Valle+del+Cauca%2C+Colombia" target="_blank" class="btn btn--footer">Get
                                 Direction</a>
                         </p>
                     </div>
                     <div class="column large-5 medium-full">
-                        <h4 class="h6">Enlaces Rápidos</h4>
+                        <h4 class="h6"><span data-i18n="footer.quicklinks">Enlaces Rápidos</span></h4>
                         <li><a href="index.html">Inicio</a></li>
                         <li><a href="about.html">Acerca de</a></li>
-                        <li><a href="volunteer.html">Voluntariado</a></li>
-                        <li><a href="connect-group.html">Grupos Conexión</a></li>
+                        <li><a href="volunteer.html"><span data-i18n="nav.volunteer">Voluntariado</span></a></li>
+                        <li><a href="connect-group.html"><span data-i18n="nav.connect">Grupos Conexión</span></a></li>
                         <li><a href="events.html">Próximos Eventos</a></li>
                         <li><a href="contact.html">Contacto</a></li>
                     </div>
@@ -473,7 +465,7 @@
 
         <div class="row footer-bottom">
             <div class="column ss-copyright">
-                <span>© Copyright Remanente 2026</span>
+                <span><span data-i18n="footer.copyright">© Copyright Remanente 2026</span></span>
                 <span>Design by <a href="https://www.styleshout.com/">StyleShout</a></span>
             </div>
         </div> <!-- footer-bottom -->
@@ -493,6 +485,7 @@
     ================================================== -->
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/plugins.js"></script>
+    <script src="js/i18n.js"></script>
     <script src="js/main.js"></script>
 
 </body>

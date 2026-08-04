@@ -1,15 +1,18 @@
 /* ==================================================================
  *  CONFIGURACIÓN — Eventos dinámicos Remanente
- *  Completa estos 3 valores siguiendo GUIA_CONFIGURACION.md
  * ================================================================== */
 
 const CONFIG = {
-  // API Key de Google Cloud con Drive API habilitada (Parte 1 de la guía)
-  GOOGLE_API_KEY: "PEGA_AQUI_TU_API_KEY",
+  // API Key de Google Cloud con Drive API habilitada
+  GOOGLE_API_KEY: "AIzaSyBoWvIdMoTGhJx8RgI1bF7fD6zsTE1h2Sg",
 
-  // ID de la carpeta de Drive que contiene TODAS las subcarpetas de eventos
-  DRIVE_PARENT_FOLDER_ID: "PEGA_AQUI_EL_ID_DE_LA_CARPETA_PADRE",
+  // ID de la carpeta de Drive que contiene todas las subcarpetas de eventos
+  DRIVE_PARENT_FOLDER_ID: "17MEWsxNUBVBvmy1G1nf_ptnuwX3crIBG",
 
-  // Bin ID de jsonbin.io (debe estar marcado como público) (Parte 2 de la guía)
-  JSONBIN_BIN_ID: "PEGA_AQUI_EL_BIN_ID",
+  // Bin ID de jsonbin.io
+  JSONBIN_BIN_ID: "6a713083f5f4af5e29e759a5",
+
+  // Access Key de solo lectura de jsonbin.io (bin privado, se envía como
+  // header X-Access-Key en cada petición)
+  JSONBIN_ACCESS_KEY: "$2a$10$UF27bfXjsqq5w/f7Nlvj2uEwinIrtLWMrrn8u0ENXfRg8j7.8LBPO",
 };

@@ -95,21 +95,30 @@ de eventos pasados). Así, aunque olvides actualizar jsonbin, la carpeta nueva
 4. Guarda el bin.
 5. En el panel del bin, busca:
    - **Bin ID** (aparece en la URL o en los detalles del bin, algo como `65f1a2b3c8e4f10012345678`)
-6. Ve a **Settings** del bin y marca la opción de **bin público / público de lectura**
-   (Public / "Privacy: Public") para que el sitio pueda leerlo sin exponer tu
-   Master Key en el código (el Master Key nunca debe ir en un sitio público).
+6. Tienes dos opciones para que el sitio pueda leer el bin sin exponer tu Master Key
+   (el Master Key nunca debe ir en un sitio público):
+
+   **Opción A — Access Key de solo lectura (recomendada, más segura):**
+   En el bin ve a **Settings → Access Keys** y crea una **Access Key** con permiso
+   solo de lectura (Read). Cópiala — la vas a pegar en `js/config.js` como
+   `JSONBIN_ACCESS_KEY`. El bin puede quedar privado.
+
+   **Opción B — Bin público:**
+   Marca el bin como **Public** en Settings. No necesitas ninguna clave adicional,
+   pero cualquiera con el Bin ID puede leerlo (no pueden editarlo sin el Master Key).
 
 ---
 
 ## PARTE 3 — Configurar el sitio
 
-Abre el archivo `js/config.js` y reemplaza los tres valores:
+Abre el archivo `js/config.js` y reemplaza los valores:
 
 ```js
 const CONFIG = {
   GOOGLE_API_KEY: "PEGA_AQUI_TU_API_KEY",
   DRIVE_PARENT_FOLDER_ID: "PEGA_AQUI_EL_ID_DE_LA_CARPETA_PADRE",
   JSONBIN_BIN_ID: "PEGA_AQUI_EL_BIN_ID",
+  JSONBIN_ACCESS_KEY: "PEGA_AQUI_TU_ACCESS_KEY", // solo si usaste la Opción A
 };
 ```
 

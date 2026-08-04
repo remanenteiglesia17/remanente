@@ -34,6 +34,13 @@
 
 <body id="top">
 
+    <!-- selector de idioma -->
+    <div class="lang-toggle">
+        <button type="button" class="lang-toggle__btn" data-lang="es">ES</button>
+        <button type="button" class="lang-toggle__btn" data-lang="en">EN</button>
+    </div>
+
+
     <!-- precargador
     ================================================== -->
     <div id="preloader">
@@ -56,14 +63,14 @@
 
         <nav class="header-nav-wrap">
             <ul class="header-nav">
-                <li><a href="index.html" title="Inicio">Inicio</a></li>
-                <li><a href="about.html" title="Acerca de">Acerca de</a></li>
-                <li class="current"><a href="events.html" title="Eventos">Eventos</a></li>
+                <li><a href="index.html" title="Inicio"><span data-i18n="nav.inicio">Inicio</span></a></li>
+                <li><a href="about.html" title="Acerca de"><span data-i18n="nav.about">Acerca de</span></a></li>
+                <li class="current"><a href="events.html" title="Eventos"><span data-i18n="nav.events">Eventos</span></a></li>
                 <li><a href="contact.html" title="Contáctanos">Contacto</a></li>	
             </ul>
         </nav>
 
-        <a class="header-menu-toggle" href="#0"><span>Menú</span></a>
+        <a class="header-menu-toggle" href="#0"><span><span data-i18n="nav.menu">Menú</span></span></a>
 
     </header> <!-- fin encabezado -->
 
@@ -115,7 +122,7 @@
                         <li><strong>Costo:</strong> 150 USD</li>
                         <li><strong>Fecha:</strong> Sábado, 28 de septiembre de 2019</li>
                         <li><strong>Horario:</strong> 8:00 AM - 5:30 PM</li>
-                        <li><strong>Lugar:</strong> 1600 Amphitheatre Parkway, Mt. View</li>
+                        <li><strong>Lugar:</strong> Cra. 7e Bis #72a-74, Palmira, Valle del Cauca</li>
                     </ul>
 
                 </div> <!-- fin event-content -->
@@ -133,25 +140,31 @@
             <div class="column">
                 <ul class="social-list">
                     <li class="social-list__item">
-                        <a href="#0" title="">
+                        <a href="https://www.youtube.com/@RemanentedelDiosvivoyeternoigl" target="_blank" rel="noopener" title="YouTube">
+                            <span class="social-list__icon social-list__icon--youtube"></span>
+                            <span class="social-list__text">YouTube</span>
+                        </a>
+                    </li>
+                    <li class="social-list__item">
+                        <a href="https://www.tiktok.com/@remanente.del.dio" target="_blank" rel="noopener" title="TikTok">
+                            <span class="social-list__icon social-list__icon--tiktok"></span>
+                            <span class="social-list__text">TikTok</span>
+                        </a>
+                    </li>
+                    <li class="social-list__item">
+                        <a href="https://www.facebook.com/iglesiaremanenteoficial" target="_blank" rel="noopener" title="Facebook">
                             <span class="social-list__icon social-list__icon--facebook"></span>
                             <span class="social-list__text">Facebook</span>
                         </a>
                     </li>
                     <li class="social-list__item">
-                        <a href="#0" title="">
-                            <span class="social-list__icon social-list__icon--twitter"></span>
-                            <span class="social-list__text">Twitter</span>
-                        </a>
-                    </li>
-                    <li class="social-list__item">
-                        <a href="#0" title="">
+                        <a href="https://www.instagram.com/remanente.iglesia17/" target="_blank" rel="noopener" title="Instagram">
                             <span class="social-list__icon social-list__icon--instagram"></span>
                             <span class="social-list__text">Instagram</span>
                         </a>
                     </li>
                     <li class="social-list__item">
-                        <a href="#0" title="">
+                        <a href="mailto:remanente.iglesia17@gmail.com" title="Correo">
                             <span class="social-list__icon social-list__icon--email"></span>
                             <span class="social-list__text">Correo</span>
                         </a>
@@ -181,23 +194,23 @@
             <div class="column large-half tab-full">
                 <div class="row">
                     <div class="column large-7 medium-full">
-                        <h4 class="h6">Nuestra Ubicación</h4>
+                        <h4 class="h6"><span data-i18n="footer.location">Nuestra Ubicación</span></h4>
                         <p>
-                        1600 Amphitheatre Parkway <br>
-                        Mountain View, California <br>
-                        94043 EE.UU.
+                        Cra. 7e Bis #72a-74 <br>
+                            Barrio Alfonso López, Palmira <br>
+                            Valle del Cauca, Colombia
                         </p>
         
                         <p>
-                        <a href="https://goo.gl/maps/bc7C7eYtSmnNs6216" target="_blank" class="btn btn--footer">Cómo llegar</a>
+                        <a href="https://www.google.com/maps/search/?api=1&query=Cra.+7e+Bis+%2372a-74%2C+Alfonso+Lopez%2C+Palmira%2C+Cali%2C+Valle+del+Cauca%2C+Colombia" target="_blank" class="btn btn--footer"><span data-i18n="footer.directions">Cómo llegar</span></a>
                         </p>
                     </div>
                     <div class="column large-5 medium-full">
-                        <h4 class="h6">Enlaces Rápidos</h4>
+                        <h4 class="h6"><span data-i18n="footer.quicklinks">Enlaces Rápidos</span></h4>
                         <ul class="footer-list">
                             <li><a href="index.html">Inicio</a></li>
                             <li><a href="about.html">Acerca de</a></li>
-                            <li><a href="volunteer.html">Voluntariado</a></li>
+                            <li><a href="volunteer.html"><span data-i18n="nav.volunteer">Voluntariado</span></a></li>
                             <li><a href="connect-group.html">Grupos de Conexión</a></li>
                             <li><a href="events.html">Próximos Eventos</a></li>
                             <li><a href="contact.html">Contacto</a></li>
@@ -209,7 +222,7 @@
 
         <div class="row footer-bottom">
             <div class="column ss-copyright">
-                <span>© Copyright Remanente 2026</span> 
+                <span><span data-i18n="footer.copyright">© Copyright Remanente 2026</span></span> 
                 <span>Diseño por <a href="https://www.styleshout.com/">StyleShout</a></span>
             </div>
         </div> <!-- fin footer-bottom -->
@@ -226,6 +239,7 @@
     ================================================== -->
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/plugins.js"></script>
+    <script src="js/i18n.js"></script>
     <script src="js/main.js"></script>
 
 </body>

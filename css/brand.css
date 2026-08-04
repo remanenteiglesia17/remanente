@@ -14,3 +14,44 @@
   width: 90px;
   height: 90px;
 }
+
+/* iconos sociales agregados: TikTok y YouTube */
+.social-list__icon--tiktok::before {
+  background-image: url(../images/icons/social/icon-tiktok.svg);
+}
+
+.social-list__icon--youtube::before {
+  background-image: url(../images/icons/social/icon-youtube.svg);
+}
+
+/* selector de idioma ES / EN */
+.lang-toggle {
+  position: fixed;
+  top: auto;
+  bottom: 18px;
+  right: 18px;
+  z-index: 200;
+  display: flex;
+  background: rgba(20, 30, 50, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 20px;
+  overflow: hidden;
+  backdrop-filter: blur(4px);
+}
+
+.lang-toggle__btn {
+  border: 0;
+  background: none;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  padding: 6px 12px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.lang-toggle__btn.is-active {
+  background-color: #fff;
+  color: var(--remanente-navy, #1b3766);
+}
