@@ -1,0 +1,26 @@
+Copia aquí las imágenes del sitio original:
+
+  cp -r Remanente_Sitio/images/* remanente-angular/src/assets/images/
+
+Estructura esperada:
+  assets/images/logo.png
+  assets/images/hero-bg-3000.jpg
+  assets/images/header-bgs/events-header-bg-2000.jpg
+  assets/images/header-bgs/about-header-bg-2000.jpg
+  assets/images/header-bgs/contact-header-bg-2000.jpg
+  assets/images/header-bgs/connect-header-bg-2000.jpg
+  assets/images/header-bgs/volunteer-header-bg-2000.jpg
+  assets/images/icons/social/icon-youtube.svg
+  assets/images/icons/social/icon-facebook.svg
+  assets/images/icons/social/icon-instagram.svg
+  assets/images/icons/social/icon-tiktok.svg
+  assets/images/icons/social/icon-email.svg
+
+Copia también estos archivos del sitio original a la raíz de src/assets/js/:
+  cp Remanente_Sitio/js/modernizr.js remanente-angular/src/assets/js/
+
+Y los favicons a la raíz de src/:
+  cp Remanente_Sitio/apple-touch-icon.png remanente-angular/src/
+  cp Remanente_Sitio/favicon-32x32.png    remanente-angular/src/
+  cp Remanente_Sitio/favicon-16x16.png    remanente-angular/src/
+  cp Remanente_Sitio/site.webmanifest     remanente-angular/src/
