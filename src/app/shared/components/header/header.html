@@ -1,0 +1,60 @@
+<header class="s-header" [class.menu-is-open]="menuOpen()">
+
+  <!-- selector de idioma -->
+  <div class="lang-toggle">
+    <button type="button" class="lang-toggle__btn"
+      [class.is-active]="i18n.lang() === 'es'"
+      (click)="i18n.setLang('es')">ES</button>
+    <button type="button" class="lang-toggle__btn"
+      [class.is-active]="i18n.lang() === 'en'"
+      (click)="i18n.setLang('en')">EN</button>
+  </div>
+
+  <div class="header-logo">
+    <a class="site-logo" routerLink="/" (click)="closeMenu()">
+      <img src="assets/images/logo.png" alt="Remanente">
+    </a>
+  </div>
+
+  <nav class="header-nav-wrap">
+    <ul class="header-nav">
+      <li>
+        <a routerLink="/" routerLinkActive="current"
+           [routerLinkActiveOptions]="{exact:true}" (click)="closeMenu()">
+          {{ i18n.t('nav.inicio') }}
+        </a>
+      </li>
+      <li>
+        <a routerLink="/about" routerLinkActive="current" (click)="closeMenu()">
+          {{ i18n.t('nav.about') }}
+        </a>
+      </li>
+      <li>
+        <a routerLink="/events" routerLinkActive="current" (click)="closeMenu()">
+          {{ i18n.t('nav.events') }}
+        </a>
+      </li>
+      <li>
+        <a routerLink="/connect-group" routerLinkActive="current" (click)="closeMenu()">
+          {{ i18n.t('nav.connect') }}
+        </a>
+      </li>
+      <li>
+        <a routerLink="/volunteer" routerLinkActive="current" (click)="closeMenu()">
+          {{ i18n.t('nav.volunteer') }}
+        </a>
+      </li>
+      <li>
+        <a routerLink="/contact" routerLinkActive="current" (click)="closeMenu()">
+          {{ i18n.t('nav.contact') }}
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <button class="header-menu-toggle" (click)="toggleMenu()"
+          [attr.aria-expanded]="menuOpen()">
+    <span>{{ menuOpen() ? '✕' : i18n.t('nav.menu') }}</span>
+  </button>
+
+</header>

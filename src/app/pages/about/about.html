@@ -1,0 +1,95 @@
+<section class="page-header page-header--about">
+  <div class="gradient-overlay"></div>
+  <div class="row page-header__content">
+    <div class="column"><h1>Somos Remanente</h1></div>
+  </div>
+</section>
+
+<section class="page-content">
+  <div class="row">
+    <div class="column">
+
+      <p class="lead drop-cap">{{ i18n.t('about.lead') }}</p>
+
+      <div class="row">
+        <div class="column large-half medium-full">
+          <h2>{{ i18n.t('about.purpose.h') }}</h2>
+          <p>{{ i18n.t('about.purpose.p') }}</p>
+        </div>
+        <div class="column large-half medium-full">
+          <h2>{{ i18n.t('about.mission.h') }}</h2>
+          <p>{{ i18n.t('about.mission.p') }}</p>
+        </div>
+      </div>
+
+      <blockquote>
+        <p>{{ i18n.t('about.verse') }}</p>
+        <cite><a href="#">{{ i18n.t('about.verse.cite') }}</a></cite>
+      </blockquote>
+
+      <br>
+
+      <h2>{{ i18n.t('about.values.h') }}</h2>
+      <div class="row block-large-1-2 block-1000-full block-list">
+        <div class="column block-list__item">
+          <h6>{{ i18n.t('about.values.1.h') }}</h6>
+          <p>{{ i18n.t('about.values.1.p') }}</p>
+        </div>
+        <div class="column block-list__item">
+          <h6>{{ i18n.t('about.values.2.h') }}</h6>
+          <p>{{ i18n.t('about.values.2.p') }}</p>
+        </div>
+        <div class="column block-list__item">
+          <h6>{{ i18n.t('about.values.3.h') }}</h6>
+          <p>{{ i18n.t('about.values.3.p') }}</p>
+        </div>
+        <div class="column block-list__item">
+          <h6>{{ i18n.t('about.values.4.h') }}</h6>
+          <p>{{ i18n.t('about.values.4.p') }}</p>
+        </div>
+      </div>
+
+      <br>
+
+      <h2>{{ i18n.t('about.believe.h') }}</h2>
+      <div class="row block-large-1-2 block-1000-full block-list">
+        <div class="column block-list__item">
+          <h6>{{ i18n.t('about.believe.1.h') }}</h6>
+          <p>{{ i18n.t('about.believe.1.p') }}</p>
+        </div>
+        <div class="column block-list__item">
+          <h6>{{ i18n.t('about.believe.2.h') }}</h6>
+          <p>{{ i18n.t('about.believe.2.p') }}</p>
+        </div>
+        <div class="column block-list__item">
+          <h6>{{ i18n.t('about.believe.3.h') }}</h6>
+          <p>{{ i18n.t('about.believe.3.p') }}</p>
+        </div>
+        <div class="column block-list__item">
+          <h6>{{ i18n.t('about.believe.4.h') }}</h6>
+          <p>{{ i18n.t('about.believe.4.p') }}</p>
+        </div>
+      </div>
+
+      <br>
+
+      <h2>{{ i18n.t('about.team.h') }}</h2>
+      <div class="row block-large-1-2 block-tab-full church-staff">
+        @for (member of staff; track member.name) {
+          <div class="column church-staff__item">
+            <div class="church-staff__header">
+              <div class="church-staff__picture">
+                <img [src]="member.img" [alt]="member.name">
+              </div>
+              <h4 class="church-staff__name">
+                {{ member.name }}
+                <span class="church-staff__position">{{ member.role }}</span>
+              </h4>
+            </div>
+          </div>
+        }
+      </div>
+
+    </div>
+  </div>
+</section>

@@ -1,0 +1,131 @@
+<!-- ══ HERO ══════════════════════════════════════════════════ -->
+<section class="s-hero"
+  style="background-image: url('assets/images/hero-bg-3000.jpg')">
+  <div class="hero-left-bar"></div>
+
+  <div class="row hero-content">
+    <div class="column large-full hero-content__text">
+      <h1>
+        Existimos para<br>
+        Honrar a Dios y<br>
+        Hacer discípulos
+      </h1>
+      <div class="hero-content__buttons">
+        <a routerLink="/events" class="btn btn--stroke">{{ i18n.t('home.hero.btn.events') }}</a>
+        <a routerLink="/about"  class="btn btn--stroke">{{ i18n.t('home.hero.btn.about') }}</a>
+      </div>
+    </div>
+  </div>
+
+  <ul class="hero-social">
+    <li class="hero-social__title">Síguenos</li>
+    <li><a href="https://www.facebook.com/iglesiaremanenteoficial"        target="_blank" rel="noopener">Fb</a></li>
+    <li><a href="https://www.youtube.com/@RemanentedelDiosvivoyeternoigl" target="_blank" rel="noopener">Yt</a></li>
+    <li><a href="https://www.tiktok.com/@remanente.del.dios"               target="_blank" rel="noopener">Tk</a></li>
+    <li><a href="https://www.instagram.com/remanente.iglesia17/"          target="_blank" rel="noopener">Ig</a></li>
+  </ul>
+
+  <div class="hero-scroll">
+    <a href="#about" class="scroll-link">Scroll For More</a>
+  </div>
+</section>
+
+<!-- ══ ABOUT / BIENVENIDOS ══════════════════════════════════ -->
+<section id="about" class="s-about">
+  <div class="row row-y-center about-content">
+
+    <!-- columna izquierda: texto -->
+    <div class="column large-half medium-full">
+      <span class="subhead">{{ i18n.t('home.about.subhead') }}</span>
+      <p class="lead">{{ i18n.t('home.about.lead') }}</p>
+      <a routerLink="/about" class="btn btn--primary">{{ i18n.t('home.about.btn') }}</a>
+    </div>
+
+    <!-- columna derecha: horarios -->
+    <div class="column large-half medium-full">
+      <ul class="about-sched">
+        <li>
+          <h4>{{ i18n.t('home.sched.title1') }}</h4>
+          <p>Domingo — 9:00 AM | 1:00 PM | 4:30 PM<br>Cra. 7e Bis #72a-74, Palmira, Valle del Cauca</p>
+        </li>
+        <li>
+          <h4>{{ i18n.t('home.sched.title2') }}</h4>
+          <p>Domingo — 9:00 AM | 1:00 PM | 4:30 PM<br>Cra. 7e Bis #72a-74, Palmira, Valle del Cauca</p>
+        </li>
+        <li>
+          <h4>{{ i18n.t('home.sched.title3') }}</h4>
+          <p>Sábado — 7:00 PM<br>Cra. 7e Bis #72a-74, Palmira, Valle del Cauca</p>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══ CONNECT ══════════════════════════════════════════════ -->
+<section class="s-connect">
+  <div class="row connect-content">
+    <div class="column large-half tab-full">
+      <h3 class="display-1">{{ i18n.t('home.connect.vol.h') }}</h3>
+      <p>{{ i18n.t('home.connect.vol.p') }}</p>
+      <a routerLink="/volunteer" class="btn btn--primary h-full-width">{{ i18n.t('home.connect.vol.btn') }}</a>
+    </div>
+    <div class="column large-half tab-full">
+      <h3 class="display-1">{{ i18n.t('home.connect.grp.h') }}</h3>
+      <p>{{ i18n.t('home.connect.grp.p') }}</p>
+      <a routerLink="/connect-group" class="btn btn--primary h-full-width">{{ i18n.t('home.connect.grp.btn') }}</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ EVENTOS TEASER ════════════════════════════════════════ -->
+<section class="s-events">
+  <div class="row">
+    <div class="column large-full">
+      <span class="subhead">{{ i18n.t('home.events.subhead') }}</span>
+      <p>{{ i18n.t('home.events.teaser') }}</p>
+      <a routerLink="/events" class="btn btn--stroke h-full-width">{{ i18n.t('home.events.btn') }}</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SERIE ACTUAL ══════════════════════════════════════════ -->
+<section class="s-series">
+  <div class="series-img"
+    style="background-image: url('assets/images/series-2000.jpg')">
+  </div>
+
+  <div class="row row-y-center series-content">
+    <div class="column large-half medium-full">
+      <span class="subhead">{{ i18n.lang() === 'es' ? 'Serie Actual' : 'Current Series' }}</span>
+      <h2>{{ i18n.lang() === 'es'
+        ? 'Transforma tu Vida con la Palabra de Dios'
+        : 'Transform Your Life with the Word of God' }}</h2>
+      <p>{{ i18n.lang() === 'es'
+        ? 'Cada mensaje de esta serie te ayudará a construir una vida sólida basada en la verdad de las Escrituras. Aprende a aplicar principios eternos en tu día a día y deja que la Palabra moldee tu corazón.'
+        : 'Each message in this series will help you build a solid life based on the truth of Scripture. Learn to apply eternal principles in your day to day and let the Word shape your heart.' }}</p>
+    </div>
+
+    <div class="column large-half medium-full">
+      <div class="series-content__buttons">
+        <a href="#" class="btn btn--large h-full-width">
+          {{ i18n.lang() === 'es' ? 'Ver Video' : 'Watch Video' }}
+        </a>
+        <a href="#" class="btn btn--large h-full-width">
+          {{ i18n.lang() === 'es' ? 'Escuchar Mensaje' : 'Listen to Message' }}
+        </a>
+      </div>
+      <div class="series-content__subscribe">
+        <p>{{ i18n.lang() === 'es'
+          ? 'No te pierdas ningún mensaje. Suscríbete a nuestros canales:'
+          : "Don't miss any message. Subscribe to our channels:" }}</p>
+        <ul class="series-content__subscribe-links">
+          <li><a href="#">Apple Podcast</a></li>
+          <li><a href="#">Spotify</a></li>
+          <li><a href="#">SoundCloud</a></li>
+          <li><a href="https://www.youtube.com/@RemanentedelDiosvivoyeternoigl" target="_blank">YouTube</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

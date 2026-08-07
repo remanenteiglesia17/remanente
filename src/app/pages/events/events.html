@@ -1,0 +1,181 @@
+<!-- page header -->
+<section class="page-header page-header--events">
+  <div class="gradient-overlay"></div>
+  <div class="row page-header__content">
+    <div class="column"><h1>{{ i18n.t('nav.events') }}</h1></div>
+  </div>
+</section>
+
+<!-- ── próximo evento ── -->
+@if (nextEvent()) {
+  <section class="s-next-event">
+    <div class="next-event__media"
+      [style.background-image]="'url(' + (nextEvent()!.coverId ? coverUrl(nextEvent()!.coverId!) : 'assets/images/hero-bg-3000.jpg') + ')'">
+    </div>
+    <div class="row next-event__content">
+      <div class="column">
+        <h3 class="subhead">{{ i18n.t('events.section.nextlabel') }}</h3>
+        <h2 class="display-1">{{ nextEvent()!.title }}</h2>
+        @if (nextEvent()!.description) {
+          <p>{{ nextEvent()!.description }}</p>
+        }
+        <ul class="events-list__meta">
+          @if (nextEvent()!.dateLabel) {
+            <li class="events-list__meta-date">{{ nextEvent()!.dateLabel }}</li>
+          }
+          @if (nextEvent()!.time) {
+            <li class="events-list__meta-time">{{ nextEvent()!.time }}</li>
+          }
+          @if (nextEvent()!.location) {
+            <li class="events-list__meta-location">{{ nextEvent()!.location }}</li>
+          }
+        </ul>
+        @if (nextEvent()!.cost) {
+          <p><strong>{{ i18n.t('events.cta.cost') }}</strong> {{ nextEvent()!.cost }}</p>
+        }
+        @if (nextEvent()!.imageCount) {
+          <button type="button" class="btn btn--stroke" (click)="openModal(nextEvent()!)">
+            {{ i18n.t('events.cta.photos') }} ({{ nextEvent()!.imageCount }})
+          </button>
+        }
+      </div>
+    </div>
+  </section>
+}
+
+<!-- ── eventos pasados ── -->
+<section class="page-content">
+  @if (loading()) {
+    <div class="row"><div class="column">
+      <p class="event-loading">{{ i18n.t('events.loading') }}</p>
+    </div></div>
+  } @else if (error()) {
+    <div class="row"><div class="column">
+      <p class="event-error">{{ error() }}</p>
+    </div></div>
+  } @else if (!pastEvents().length) {
+    <div class="row"><div class="column">
+      <p>{{ i18n.t('events.empty') }}</p>
+    </div></div>
+  } @else {
+    <div class="row events-header">
+      <div class="column">
+        <h2 class="subhead">{{ i18n.t('events.section.past') }}</h2>
+      </div>
+    </div>
+
+    <div class="row block-large-1-3 block-tab-1-2 block-mob-full events-cards">
+      @for (ev of pastEvents(); track ev.folderId) {
+        <div class="column event-col">
+          <button type="button" class="event-card"
+            [attr.aria-label]="i18n.t('events.cta.photos') + ' — ' + ev.title"
+            (click)="openModal(ev)">
+
+            <div class="event-card__media">
+              @if (ev.coverId) {
+                <img [src]="coverUrl(ev.coverId)" [alt]="ev.title" loading="lazy">
+              } @else {
+                <div class="event-card__no-image">Remanente</div>
+              }
+              <div class="event-card__overlay">
+                <span class="event-card__zoom">&#128269;</span>
+              </div>
+            </div>
+
+            <div class="event-card__body">
+              <h3 class="event-card__title">{{ ev.title }}</h3>
+              @if (ev.dateLabel) {
+                <p class="event-card__date">{{ ev.dateLabel }}</p>
+              }
+              @if (ev.description) {
+                <p class="event-card__desc">{{ ev.description }}</p>
+              }
+              <span class="event-card__cta">
+                {{ i18n.t('events.cta.photos') }}
+                @if (ev.imageCount) { ({{ ev.imageCount }}) }
+              </span>
+            </div>
+          </button>
+        </div>
+      }
+    </div>
+  }
+</section>
+
+<!-- ══════════════════════════════
+     MODAL CAROUSEL
+══════════════════════════════ -->
+@if (modalOpen()) {
+  <div class="modal-backdrop" (click)="onBackdropClick($event)" role="dialog"
+       [attr.aria-label]="modalEvent()?.title" aria-modal="true">
+
+    <div class="modal-box" (click)="$event.stopPropagation()">
+
+      <!-- cabecera modal -->
+      <div class="modal-header">
+        <h3 class="modal-title">{{ modalEvent()?.title }}</h3>
+        <button class="modal-close" type="button"
+                [attr.aria-label]="i18n.t('events.gallery.close')"
+                (click)="closeModal()">✕</button>
+      </div>
+
+      <!-- cuerpo -->
+      <div class="modal-body">
+        @if (modalLoading()) {
+          <div class="modal-loading">
+            <span>{{ i18n.t('events.gallery.loading') }}</span>
+          </div>
+        } @else if (!modalImages().length) {
+          <div class="modal-loading">
+            <span>{{ i18n.t('events.gallery.empty') }}</span>
+          </div>
+        } @else {
+          <!-- stage -->
+          <div class="modal-stage">
+            <button class="modal-arrow modal-arrow--prev"
+                    [attr.aria-label]="i18n.t('events.gallery.prev')"
+                    (click)="prevSlide()">&#8249;</button>
+
+            <div class="modal-slide">
+              <img
+                [src]="coverUrl(modalImages()[modalIndex()].id)"
+                [alt]="modalImages()[modalIndex()].name"
+                class="modal-img"
+                (click)="openFull(modalImages()[modalIndex()].id)"
+                title="Clic para ver en tamaño completo"
+                loading="lazy">
+              <span class="modal-counter">
+                {{ modalIndex() + 1 }} / {{ modalImages().length }}
+              </span>
+            </div>
+
+            <button class="modal-arrow modal-arrow--next"
+                    [attr.aria-label]="i18n.t('events.gallery.next')"
+                    (click)="nextSlide()">&#8250;</button>
+          </div>
+
+          <!-- thumbnails -->
+          <div class="modal-thumbs">
+            @for (img of modalImages(); track img.id; let i = $index) {
+              <button class="modal-thumb"
+                      [class.is-active]="i === modalIndex()"
+                      (click)="goToSlide(i)"
+                      [attr.aria-label]="'Foto ' + (i + 1)">
+                <img [src]="coverUrl(img.id)" [alt]="img.name" loading="lazy">
+              </button>
+            }
+          </div>
+        }
+      </div>
+
+      <!-- footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn--stroke modal-close-btn"
+                (click)="closeModal()">
+          {{ i18n.t('events.gallery.close') }}
+        </button>
+      </div>
+
+    </div>
+  </div>
+}
