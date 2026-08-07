@@ -1,12 +1,12 @@
 import { Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { I18nService } from '../../../core/services/i18n.service';
-import { SmoothScrollDirective } from '../../directives/smooth-scroll.directive';
+import { BackToTopComponent } from '../back-to-top/back-to-top.component';
 
 @Component({
   selector: 'app-footer',
   standalone: true,
-  imports: [RouterLink, SmoothScrollDirective],
+  imports: [RouterLink, BackToTopComponent],
   templateUrl: './footer.html',
 })
 export class FooterComponent {

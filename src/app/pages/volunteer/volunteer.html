@@ -1,11 +1,127 @@
+<!-- page header -->
 <section class="page-header page-header--volunteer">
   <div class="gradient-overlay"></div>
   <div class="row page-header__content">
-    <div class="column"><h1>{{ i18n.t('nav.volunteer') }}</h1></div>
+    <div class="column">
+      <h1>{{ i18n.t('volunteer.title') }}</h1>
+    </div>
   </div>
 </section>
+
+<!-- page content -->
 <section class="page-content">
-  <div class="row"><div class="column">
-    <p class="lead">{{ i18n.t('home.connect.vol.p') }}</p>
-  </div></div>
+  <div class="row">
+    <div class="column">
+
+      <p class="lead drop-cap">{{ i18n.t('volunteer.lead') }}</p>
+      <p>{{ i18n.t('volunteer.intro') }}</p>
+
+      <br>
+
+      <h2>{{ i18n.t('volunteer.section_title') }}</h2>
+      
+      <div class="row block-large-1-2 block-1000-full block-list">
+        <div class="column block-list__item">
+          <h4 class="block-list__title-with-num">{{ i18n.t('volunteer.ministries.ushering.title') }}.</h4>
+          <p>{{ i18n.t('volunteer.ministries.ushering.desc') }}</p>
+        </div>
+
+        <div class="column block-list__item">
+          <h4 class="block-list__title-with-num">{{ i18n.t('volunteer.ministries.kids.title') }}.</h4>
+          <p>{{ i18n.t('volunteer.ministries.kids.desc') }}</p>
+        </div>
+
+        <div class="column block-list__item">
+          <h4 class="block-list__title-with-num">{{ i18n.t('volunteer.ministries.music.title') }}.</h4>
+          <p>{{ i18n.t('volunteer.ministries.music.desc') }}</p>
+        </div>
+
+        <div class="column block-list__item">
+          <h4 class="block-list__title-with-num">{{ i18n.t('volunteer.ministries.prayer.title') }}.</h4>
+          <p>{{ i18n.t('volunteer.ministries.prayer.desc') }}</p>
+        </div>
+
+        <div class="column block-list__item">
+          <h4 class="block-list__title-with-num">{{ i18n.t('volunteer.ministries.admin.title') }}.</h4>
+          <p>{{ i18n.t('volunteer.ministries.admin.desc') }}</p>
+        </div>
+
+        <div class="column block-list__item">
+          <h4 class="block-list__title-with-num">{{ i18n.t('volunteer.ministries.production.title') }}.</h4>
+          <p>{{ i18n.t('volunteer.ministries.production.desc') }}</p>
+        </div>
+
+        <div class="column block-list__item">
+          <h4 class="block-list__title-with-num">{{ i18n.t('volunteer.ministries.technical.title') }}.</h4>
+          <p>{{ i18n.t('volunteer.ministries.technical.desc') }}</p>
+        </div>
+
+        <div class="column block-list__item">
+          <h4 class="block-list__title-with-num">{{ i18n.t('volunteer.ministries.communications.title') }}.</h4>
+          <p>{{ i18n.t('volunteer.ministries.communications.desc') }}</p>
+        </div>
+      </div>
+
+      <h2>{{ i18n.t('volunteer.form.title') }}</h2>
+      <p>{{ i18n.t('volunteer.form.sub') }}</p>
+
+      <form name="volunteerForm" id="volunteerForm" class="volunteerForm" method="post" action="" autocomplete="off">
+        <fieldset>
+
+          <div class="form-field">
+            <input name="cName" id="cName" class="h-full-width h-remove-bottom" [placeholder]="i18n.t('volunteer.form.name_ph')" value="" type="text">
+          </div>
+
+          <div class="form-field">
+            <input name="cEmail" id="cEmail" class="h-full-width h-remove-bottom" [placeholder]="i18n.t('volunteer.form.email_ph')" value="" type="text">
+          </div>
+
+          <div class="form-field">
+            <input name="cPhone" id="cPhone" class="h-full-width h-remove-bottom" [placeholder]="i18n.t('volunteer.form.phone_ph')" value="" type="tel">
+          </div>
+
+          <div class="form-field">
+            <input name="cFacebook" id="cFacebook" class="h-full-width h-remove-bottom" [placeholder]="i18n.t('volunteer.form.facebook_ph')" value="" type="text">
+          </div>
+
+          <br>
+          <div class="form-field">
+            <label for="cMinistry">{{ i18n.t('volunteer.form.ministry_label') }}</label>
+            <div class="ss-custom-select">
+              <select class="h-full-width h-remove-bottom" name="cMinistry" id="cMinistry">
+                <option value="Acomodadores y Seguridad">{{ i18n.t('volunteer.ministries.ushering.title') }}</option>
+                <option value="Iglesia Infantil">{{ i18n.t('volunteer.ministries.kids.title') }}</option>
+                <option value="Equipo de Música">{{ i18n.t('volunteer.ministries.music.title') }}</option>
+                <option value="Equipo de Oración">{{ i18n.t('volunteer.ministries.prayer.title') }}</option>
+                <option value="Apoyo Administrativo">{{ i18n.t('volunteer.ministries.admin.title') }}</option>
+                <option value="Diseño y Producción">{{ i18n.t('volunteer.ministries.production.title') }}</option>
+                <option value="Técnica y Escenario">{{ i18n.t('volunteer.ministries.technical.title') }}</option>
+                <option value="Comunicaciones">{{ i18n.t('volunteer.ministries.communications.title') }}</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label for="cFirstTime">{{ i18n.t('volunteer.form.first_time_label') }}</label>
+            <div class="ss-custom-select">
+              <select class="h-full-width h-remove-bottom" name="cFirstTime" id="cFirstTime">
+                <option value="Sí">{{ i18n.t('volunteer.form.yes') }}</option>
+                <option value="No">{{ i18n.t('volunteer.form.no') }}</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="comments form-field">
+            <textarea name="cComments" id="cComments" class="h-full-width h-remove-bottom" [placeholder]="i18n.t('volunteer.form.comments_ph')"></textarea>
+          </div>
+
+          <br>
+
+          <input name="submit" id="submit" class="btn btn--primary btn--large h-full-width" [value]="i18n.t('volunteer.form.submit')" type="submit">
+
+        </fieldset>
+      </form>
+
+    </div>
+  </div>
 </section>
